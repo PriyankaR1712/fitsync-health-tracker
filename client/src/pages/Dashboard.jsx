@@ -6,6 +6,7 @@ import {
   Flame,
   Droplets,
   Footprints,
+  Moon,
 } from "lucide-react";
 
 function Dashboard() {
@@ -100,7 +101,7 @@ function Dashboard() {
       </div>
 
       {/* Dashboard Cards */}
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-4 gap-6">
         {/* Calories Card */}
         <div className="bg-gradient-to-br from-orange-500 to-red-600 p-6 rounded-3xl shadow-xl hover:scale-105 transition">
           <div className="flex items-center justify-between">
@@ -114,7 +115,7 @@ function Dashboard() {
           </div>
         </div>
 
-        {/* Water Card */}
+        {/* Water Intake Card */}
         <div className="bg-gradient-to-br from-cyan-500 to-blue-600 p-6 rounded-3xl shadow-xl hover:scale-105 transition">
           <div className="flex items-center justify-between">
             <div>
@@ -137,6 +138,19 @@ function Dashboard() {
               </p>
             </div>
             <Footprints size={50} />
+          </div>
+        </div>
+
+        {/* Sleep Hours Card */}
+        <div className="bg-gradient-to-br from-purple-500 to-pink-600 p-6 rounded-3xl shadow-xl hover:scale-105 transition">
+          <div className="flex items-center justify-between">
+            <div>
+              <h2 className="text-xl font-semibold">Sleep Hours</h2>
+              <p className="text-5xl mt-4 font-bold">
+                {latestData?.sleepHours || 0} hrs
+              </p>
+            </div>
+            <Moon size={50} />
           </div>
         </div>
       </div>
