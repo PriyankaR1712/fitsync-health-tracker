@@ -32,7 +32,7 @@ function Dashboard() {
       try {
 
         const response = await axios.get(
-          "http://localhost:5000/api/health"
+          "https://fitsync-health-tracker.onrender.com/api/health/add"
         );
 
         setHealthData(response.data);
