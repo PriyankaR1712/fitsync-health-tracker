@@ -62,7 +62,7 @@ function Dashboard() {
     try {
 
       await axios.post(
-        "http://localhost:5000/api/health/add",
+        "https://fitsync-health-tracker.onrender.com",
         {
           calories,
           waterIntake,
