@@ -56,33 +56,26 @@ function Dashboard() {
   };
 
   const handleAddHealthData = async (e) => {
+  e.preventDefault();
 
-    e.preventDefault();
+  try {
+    await axios.post(
+      "https://fitsync-health-tracker.onrender.com/api/health/add",
+      {
+        calories,
+        waterIntake,
+        steps,
+        sleepHours,
+      }
+    );
 
-    try {
-
-      await axios.post(
-        "https://fitsync-health-tracker.onrender.com/api/health/add",
-        {
-          calories,
-          waterIntake,
-          steps,
-          sleepHours,
-        }
-      );
-
-      alert("Health data added");
-
-      window.location.reload();
-
-    } catch (error) {
-
-      console.log(error);
-
-      alert("Failed to add data");
-
-    }
-  };
+    alert("Health data added successfully!");
+    window.location.reload();
+  } catch (error) {
+    console.log(error);
+    alert("Failed to add data");
+  }
+};
 
   return (
     <div className="min-h-screen bg-gray-950 text-white p-8">
