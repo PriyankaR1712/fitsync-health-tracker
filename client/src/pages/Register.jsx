@@ -13,7 +13,7 @@ function Register() {
     try {
 
       const response = await axios.post(
-        "https://fitsync-health-tracker.onrender.com",
+        "https://fitsync-health-tracker.onrender.com/api/auth/register",
         {
           name,
           email,
